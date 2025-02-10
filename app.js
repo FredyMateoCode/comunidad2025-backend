@@ -15,6 +15,6 @@ app.get('/', (req, res) => {
     res.send('Servidor funcionando 🚀');
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log('Servidor <<Comunidad>> ejecutandose en el puerto ${PORT}');
 });
