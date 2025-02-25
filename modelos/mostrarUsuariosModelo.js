@@ -5,7 +5,7 @@ const conexion = require('../configuracion/conexion.js');
  para obtener todos los usuarios de la base de datos y mostrar error de ser el caso*/
 const obtenerUsuarios = (callback) => {
     //Creamos la consulta como una CONSTANTE para obtener todos los usuarios de la base de datos.
-    const consulta = 'SELECT id_usuario, nombres_usuario FROM usuarios';
+    const consulta = 'SELECT id_usuario, usuario_usuario, nombres_usuario FROM usuarios';
     //Ejecutamos la consulta y Hacemos un callback:
     //El callback tiene dos parámetros, uno para manejar los errores y otro para los resultados.
     //conexion.query es un método del mysql para realizar consultas en una base de datos:
