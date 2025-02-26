@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const encriptarClave = async () => {
     const passwordPlano = '1234';
