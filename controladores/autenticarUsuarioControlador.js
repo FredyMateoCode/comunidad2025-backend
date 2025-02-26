@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs'); // Para encriptar contraseña
 const autenticarUsuario = require('../modelos/autenticarUsuarioModelo'); // Importamos el modelo
-const generarJWT = require('../FRED/generarJWT'); // Importamos la función para generar tokens
+const generarJWT = require('../utilidades/generarJWT'); // Importamos la función para generar tokens
 
 // Función para autenticar al usuario
 const autenticarUsuarioControlador = async (req, res) => {
