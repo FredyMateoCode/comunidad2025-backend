@@ -2,35 +2,42 @@
 require('dotenv').config();//Para utilizar las variables de entorno.
 const express = require('express'); // Para crear el servidor de backend.
 const app = express(); //Instancia para crear el servidor y manejara las rutas
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; //Utilizará el puerto de render de lo contrario utiizará el 5000
+const cors = require("cors");//Permite las peticiones de cualquier lugar
 
+/*Rutas para servir*/
+const mostrarUsuariosRuta = require ('./rutas/mostrarUsuariosRuta');//Importamos las rutas dentro de una constante.
 
-
-
-const cors = require("cors");
-
-// Habilitar CORS para permitir peticiones desde el frontend
-app.use(cors());
-
-
-
-
-
-//Importamos las rutas dentro de una constante.
-const mostrarUsuariosRuta = require ('./rutas/mostrarUsuariosRuta');
+/*Utilización de dependencias*/
+app.use(cors());// Habilitar CORS para permitir peticiones desde el frontend
 
 //Permite que el backend reciba datos en FORMATO JSON
 app.use(express.json());
 
+/*--------------------SECCIÓN DE PRUEBA - IMPORTACIONES ------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+const autenticarUsuarioRuta = require('./rutas/autenticarUsuarioRuta');
+/*--------------------SECCIÓN DE PRUEBA - IMPORTACIONES <<<<<<<<<<<<<<<<<<<<<-------------------------------*/
+
+
 //Servimos las rutas
 app.use('/mostrarUsuarios', mostrarUsuariosRuta);
+
+
+
+
+/*--------------------SECCIÓN DE PRUEBA - USO DE RUTAS Y OTROS--------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+app.use('/autenticarUsuarios', autenticarUsuarioRuta);
+
+require('dotenv').config();//Relacionado con el login
+
+/*--------------------SECCIÓN DE PRUEBA - USO DE RUTAS Y OTROS<<<<<<<<<<<<<<<<<<<<<<<<<<<<--------------------------*/
+
 
 //Iniciamos el servidor con un puerto especifico.
 app.get('/', (req, res) => {
     res.send('Servidor funcionando 🚀');
 });
 
-//
 app.listen(PORT, '0.0.0.0', () => {
     console.log('Servidor <<Comunidad>> ejecutandose en el puerto ${PORT}');
 });
