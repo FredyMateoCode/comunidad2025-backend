@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt'); // Para encriptar contraseña
+const bcrypt = require('bcryptjs'); // Para encriptar contraseña
 const autenticarUsuario = require('../modelos/autenticarUsuarioModelo'); // Importamos el modelo
 const generarJWT = require('../Utilidades/generarJWT'); // Importamos la función para generar tokens
 
