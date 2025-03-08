@@ -15,4 +15,3 @@ const obtenerComuneros = (callback) => {
 module.exports = { obtenerComuneros };
 
 
-majada_com, carne_com, condicion_com, caserio_com
