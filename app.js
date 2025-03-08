@@ -7,6 +7,7 @@ const cors = require("cors");//Permite las peticiones de cualquier lugar
 
 /*Rutas para servir*/
 const mostrarUsuariosRuta = require ('./rutas/mostrarUsuariosRuta');//Importamos las rutas dentro de una constante.
+const autenticarUsuarioRuta = require('./rutas/autenticarUsuarioRuta');
 
 /*Utilización de dependencias*/
 app.use(cors());// Habilitar CORS para permitir peticiones desde el frontend
@@ -14,23 +15,27 @@ app.use(cors());// Habilitar CORS para permitir peticiones desde el frontend
 //Permite que el backend reciba datos en FORMATO JSON
 app.use(express.json());
 
-/*--------------------SECCIÓN DE PRUEBA - IMPORTACIONES ------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-const autenticarUsuarioRuta = require('./rutas/autenticarUsuarioRuta');
-/*--------------------SECCIÓN DE PRUEBA - IMPORTACIONES <<<<<<<<<<<<<<<<<<<<<-------------------------------*/
+/*--------------------SECCIÓN DE PRUEBA - IMPORTACIONES ---------->>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+const mostrarComunerosRuta = require ('./rutas/mostrarComunerosRuta');//Importamos las rutas dentro de una constante.
+/*--------------------SECCIÓN DE PRUEBA - IMPORTACIONES <<<<<<<<<<<<<<<<<<<<<-----------------*/
 
 
 //Servimos las rutas
 app.use('/mostrarUsuarios', mostrarUsuariosRuta);
-
-
-
-
-/*--------------------SECCIÓN DE PRUEBA - USO DE RUTAS Y OTROS--------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 app.use('/autenticarUsuarios', autenticarUsuarioRuta);
 
-require('dotenv').config();//Relacionado con el login
 
-/*--------------------SECCIÓN DE PRUEBA - USO DE RUTAS Y OTROS<<<<<<<<<<<<<<<<<<<<<<<<<<<<--------------------------*/
+
+/*--------------------SECCIÓN DE PRUEBA - USO DE RUTAS Y OTROS--------------->>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+app.use('/mostrarComuneros', mostrarComunerosRuta);
+
+
+
+require('dotenv').config();//Relacionado con el login
+/*--------------------SECCIÓN DE PRUEBA - USO DE RUTAS Y OTROS<<<<<<<<<<<<<<<<<<<<<<<<<<<<--------------*/
+
+
+
 
 
 //Iniciamos el servidor con un puerto especifico.

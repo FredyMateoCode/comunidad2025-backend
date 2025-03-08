@@ -1,3 +1,4 @@
+/*Este componente no influye en la funcionalidad del proyecto, solamente para generar claves encriptadas*/
 const bcrypt = require('bcryptjs');
 
 const encriptarClave = async () => {

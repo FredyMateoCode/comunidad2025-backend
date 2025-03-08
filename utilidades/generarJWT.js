@@ -1,3 +1,4 @@
+/*Para generar el token*/
 const jwt = require('jsonwebtoken');
 
 /**
