@@ -44,5 +44,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-    console.log('Servidor <<Comunidad>> ejecutandose en el puerto ${PORT}');
+    console.log(`Servidor <<Comunidad>> ejecutándose en el puerto ${PORT}`);
 });
