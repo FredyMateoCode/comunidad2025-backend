@@ -14,7 +14,7 @@ const autenticarUsuarioControlador = async (req, res) => {
 
         // Si no encontramos un usuario, respondemos con error
         if (!usuarioConsultado) {
-            return res.status(401).json({ mensaje: 'ACCESO DENEGADO. Usuario o contraseña incorrectos' });
+            return res.status(401).json({ mensaje: 'ACCESO DENEGADO. Usuario o contraseña incorrectos 2025' });
         }
 
         // Verificar la contraseña con bcrypt
