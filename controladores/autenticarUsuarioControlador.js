@@ -14,7 +14,7 @@ const autenticarUsuarioControlador = async (req, res) => {
 
         // Si no encontramos un usuario, respondemos con error
         if (!usuarioConsultado) {
-            return res.status(401).json({ mensaje: 'ACCESO DENEGADO. Usuario o contraseña incorrectos 2025' });
+            return res.status(401).json({ mensaje: 'ACCESO DENEGADO: Usuario o contraseña incorrectos' });
         }
 
         // Verificar la contraseña con bcrypt
@@ -26,7 +26,7 @@ const autenticarUsuarioControlador = async (req, res) => {
         const passwordMatch = await bcrypt.compare(password, usuarioConsultado.password_usuario);
 
         if (!passwordMatch) {
-            return res.status(401).json({ mensaje: 'ACCESO DENEGADO. Usuario o contraseña incorrectos' });
+            return res.status(401).json({ mensaje: 'ACCESO DENEGADO: Usuario o contraseña incorrectos' });
         }
 
         // Generar un token JWT usando el ID y el rol del usuario
